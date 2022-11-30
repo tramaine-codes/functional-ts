@@ -47,7 +47,7 @@
     "vitest": "^0.25.3"
   },
   "dependencies": {
-    "@mobily/ts-belt": "3.13.1",
+    "@mobily/ts-belt": "^4.0.0-rc.1",
     "fp-ts": "2.13.1",
     "monet": "0.9.3",
     "neverthrow": "5.1.0",
