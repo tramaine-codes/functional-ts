@@ -12,7 +12,13 @@
   "engines": {
     "node": ">=14.16"
   },
-  "main": "./lib/index.js",
+  "imports": {
+    "#dep": {
+      "node": "ts-pattern",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.modern.js"
+    }
+  },
   "scripts": {
     "build": "npm run clean && npm test && tsc",
     "clean": "del ./lib ./coverage",
@@ -47,7 +53,7 @@
     "vitest": "0.25.8"
   },
   "dependencies": {
-    "@mobily/ts-belt": "^4.0.0-rc.3",
+    "@mobily/ts-belt": "4.0.0-rc.3",
     "fp-ts": "2.13.1",
     "list": "2.0.19",
     "monet": "0.9.3",
