@@ -12,13 +12,6 @@
   "engines": {
     "node": ">=14.16"
   },
-  "imports": {
-    "#dep": {
-      "node": "ts-pattern",
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.modern.js"
-    }
-  },
   "scripts": {
     "build": "npm run clean && npm test && tsc",
     "clean": "del ./lib ./coverage",
