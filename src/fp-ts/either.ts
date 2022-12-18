@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
-import E from 'fp-ts/es6/Either.js';
-import { pipe } from 'fp-ts/es6/function.js';
+import E from 'fp-ts/lib/Either.js';
+import { pipe } from 'fp-ts/lib/function.js';
 import { Response, trySomething } from '../util/util.js';
 
 /*

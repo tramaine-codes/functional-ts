@@ -1,15 +1,16 @@
 /* eslint-disable no-console */
-import { pipe } from 'fp-ts/es6/function.js';
-import O from 'fp-ts/es6/Option.js';
-import RA from 'fp-ts/es6/ReadonlyArray.js';
+import { flow, pipe } from 'fp-ts/lib/function.js';
+import O from 'fp-ts/lib/Option.js';
+import RA from 'fp-ts/lib/ReadonlyArray.js';
 
-function get<T>(array: readonly T[], index: number) {
-  return pipe(array, RA.lookup(index));
+function get(index: number) {
+  return flow(RA.lookup(index));
 }
 
 console.log(
   pipe(
-    get([1, 2, 3], 2),
+    [1, 2, 3],
+    get(2),
     O.match(
       () => -1,
       (val) => val
@@ -19,7 +20,8 @@ console.log(
 
 console.log(
   pipe(
-    get([1, 2, 3], 3),
+    [1, 2, 3],
+    get(3),
     O.getOrElse(() => -1)
   )
 );
