@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
-import { pipe } from 'fp-ts/lib/function.js';
-import O from 'fp-ts/lib/Option.js';
-import RA from 'fp-ts/lib/ReadonlyArray.js';
+import { pipe } from 'fp-ts/es6/function.js';
+import O from 'fp-ts/es6/Option.js';
+import RA from 'fp-ts/es6/ReadonlyArray.js';
 
 function get<T>(array: readonly T[], index: number) {
   return pipe(array, RA.lookup(index));
