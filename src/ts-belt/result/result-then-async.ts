@@ -19,7 +19,7 @@ const result = pipe(1, validate, R.map(process));
 // const result = pipe(11, validate, R.map(process));
 
 if (R.isOk(result)) {
-  console.log(R.Ok(await pipe(result, R.toUndefined)));
+  console.log(R.Ok(await pipe(result, R.getExn)));
 } else {
   console.log(result);
 }
