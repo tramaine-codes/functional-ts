@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import * as L from 'list';
+import L from 'list';
 
 const lst = L.list(1, 2, 3, 4, 5);
 
