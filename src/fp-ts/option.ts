@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
-import { flow, pipe } from 'fp-ts/lib/function.js';
-import O from 'fp-ts/lib/Option.js';
-import RA from 'fp-ts/lib/ReadonlyArray.js';
+import { function as F, option as O, readonlyArray as RA } from 'fp-ts';
+
+const { flow, pipe } = F;
 
 function get(index: number) {
   return flow(RA.lookup(index));

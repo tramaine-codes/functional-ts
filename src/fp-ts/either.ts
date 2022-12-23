@@ -1,7 +1,8 @@
 /* eslint-disable no-console */
-import E from 'fp-ts/lib/Either.js';
-import { pipe } from 'fp-ts/lib/function.js';
+import { either as E, function as F } from 'fp-ts';
 import { Response, trySomething } from '../util/util.js';
+
+const { pipe } = F;
 
 /*
  * Handle errors and successes
