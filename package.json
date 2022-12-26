@@ -30,9 +30,9 @@
     "@commitlint/cli": "17.3.0",
     "@commitlint/config-conventional": "17.3.0",
     "@release-it/conventional-changelog": "5.1.1",
-    "@types/node": "18.11.17",
-    "@typescript-eslint/eslint-plugin": "5.47.0",
-    "@typescript-eslint/parser": "5.47.0",
+    "@types/node": "18.11.18",
+    "@typescript-eslint/eslint-plugin": "5.47.1",
+    "@typescript-eslint/parser": "5.47.1",
     "@vitest/coverage-c8": "0.26.2",
     "del-cli": "5.0.0",
     "eslint": "8.30.0",
@@ -51,8 +51,10 @@
     "list": "2.0.19",
     "monet": "0.9.3",
     "neverthrow": "6.0.0",
+    "pify": "6.1.0",
     "prelude-ts": "1.0.5",
     "purify-ts": "1.3.0",
+    "remeda": "1.3.0",
     "ts-option": "2.1.0",
     "ts-pattern": "4.0.6"
   }
