@@ -47,6 +47,7 @@
   },
   "dependencies": {
     "@mobily/ts-belt": "4.0.0-rc.3",
+    "@rimbu/core": "0.11.0",
     "fp-ts": "2.13.1",
     "list": "2.0.19",
     "monet": "0.9.3",
