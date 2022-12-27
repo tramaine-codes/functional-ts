@@ -1,5 +1,9 @@
-/* eslint-disable no-console */
-import { function as F, option as O, readonlyArray as RA } from 'fp-ts';
+import {
+  console as C,
+  function as F,
+  option as O,
+  readonlyArray as RA,
+} from 'fp-ts';
 
 const { flow, pipe } = F;
 
@@ -7,21 +11,19 @@ function get(index: number) {
   return flow(RA.lookup(index));
 }
 
-console.log(
-  pipe(
-    [1, 2, 3],
-    get(2),
-    O.match(
-      () => -1,
-      (val) => val
-    )
-  )
-);
+pipe(
+  [1, 2, 3],
+  get(2),
+  O.match(
+    () => -1,
+    (val) => val
+  ),
+  C.log
+)();
 
-console.log(
-  pipe(
-    [1, 2, 3],
-    get(3),
-    O.getOrElse(() => -1)
-  )
-);
+pipe(
+  [1, 2, 3],
+  get(3),
+  O.getOrElse(() => -1),
+  C.log
+)();

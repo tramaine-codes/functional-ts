@@ -1,5 +1,11 @@
 /* eslint-disable no-console */
-import { either as E, function as F, task as T, taskEither as TE } from 'fp-ts';
+import {
+  console as C,
+  either as E,
+  function as F,
+  task as T,
+  taskEither as TE,
+} from 'fp-ts';
 
 const { flow, pipe } = F;
 
@@ -17,11 +23,12 @@ function process({ baz }: { readonly baz: string }): T.Task<string> {
   return async () => baz;
 }
 
-const result = await pipe(
-  11,
-  validate,
-  TE.fromEither,
-  TE.chainW(flow(process, TE.fromTask))
+pipe(
+  await pipe(
+    11,
+    validate,
+    TE.fromEither,
+    TE.chainW(flow(process, TE.fromTask))
+  )(),
+  C.log
 )();
-
-console.log(result);
