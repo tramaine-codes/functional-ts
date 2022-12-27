@@ -12,23 +12,10 @@ function get(index: number) {
   return flow(RA.lookup(index));
 }
 
-pipe(
-  O.some((x: number) => (y: number) => x + y),
-  O.ap(O.some(2)),
-  O.ap(O.some(3)),
-  C.log
-)();
+const add = (x: number) => (y: number) => x + y;
 
-pipe(
-  O.some((x: number) => (y: number) => x + y),
-  O.ap(pipe([1, 2, 3], get(1))),
-  O.ap(O.some(3)),
-  C.log
-)();
+pipe(O.some(add), O.ap(O.some(2)), O.ap(O.some(3)), C.log)();
 
-pipe(
-  O.some((x: number) => (y: number) => x + y),
-  O.ap(pipe([1, 2, 3], get(3))),
-  O.ap(O.some(3)),
-  C.log
-)();
+pipe(O.some(add), O.ap(pipe([1, 2, 3], get(1))), O.ap(O.some(3)), C.log)();
+
+pipe(O.some(add), O.ap(pipe([1, 2, 3], get(3))), O.ap(O.some(3)), C.log)();
