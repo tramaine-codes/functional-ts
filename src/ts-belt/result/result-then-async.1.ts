@@ -11,16 +11,6 @@ async function validate(num: number) {
   } as const);
 }
 
-// function validate2(num: number) {
-//   if (num < 10) {
-//     return AR.reject(['foo', 'bar'] as const);
-//   }
-
-//   return AR.resolve({
-//     baz: 'qux',
-//   } as const);
-// }
-
 function process({ baz }: { readonly baz: string }) {
   return AR.resolve(baz);
 }
