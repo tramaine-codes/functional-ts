@@ -1,5 +1,14 @@
 /* eslint-disable no-console */
-import { bimap, Either, extract, Left, match, pipe, Right } from 'purifree-ts';
+import {
+  bimap,
+  Either,
+  extract,
+  Left,
+  mapLeft,
+  match,
+  pipe,
+  Right,
+} from 'purifree-ts';
 import { Response, trySomething } from '../../util/util.js';
 
 /*
@@ -18,10 +27,11 @@ pipe(failOrNot(false), match({ Right: console.log, Left: console.error }));
  * Handle exceptions
  */
 
-const result = Either.encase(() => ({ number: trySomething() })).mapLeft(
-  (e) => ({
+const result = pipe(
+  Either.encase(() => ({ number: trySomething() })),
+  mapLeft((e) => ({
     errors: [(e as Error).message],
-  })
+  }))
 );
 
 Response.log(
