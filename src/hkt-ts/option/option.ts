@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 import { pipe, Maybe } from 'hkt-ts';
 
-const get = <T>(array: readonly T[], index: number) => {
-  return Maybe.fromNullable(array[index]);
+const get = <T>(lst: readonly T[], index: number) => {
+  return Maybe.fromNullable(lst[index]);
 };
 
 console.log(
