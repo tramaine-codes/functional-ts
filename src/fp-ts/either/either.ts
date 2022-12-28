@@ -38,8 +38,10 @@ Response.log(
 Response.log(
   pipe(
     result,
-    E.mapLeft((data) => new Response(400, data)),
-    E.map((data) => new Response(200, data)),
+    E.bimap(
+      (e) => new Response(400, e),
+      (data) => new Response(200, data)
+    ),
     E.match(
       (response) => response,
       (response) => response
