@@ -15,6 +15,6 @@ console.log(
   )
 );
 
-console.log(pipe(get([1, 2, 3], 2), O.getWithDefault<number>(-1)));
+console.log(pipe(get([1, 2, 3], 2), O.getWithDefault(-1)));
 
 console.log(O.getWithDefault(get([1, 2, 3], 3), -1));
