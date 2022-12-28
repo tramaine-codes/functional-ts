@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import { List, Range } from 'immutable';
-// import L from 'list';
 
 const lst = List([1, 2, 3, 4, 5]);
 
