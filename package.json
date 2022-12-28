@@ -52,6 +52,7 @@
     "collectable": "0.31.1",
     "fluture": "14.0.0",
     "fp-ts": "2.13.1",
+    "hkt-ts": "2.1.5",
     "immutable": "4.2.1",
     "list": "2.0.19",
     "monet": "0.9.3",
