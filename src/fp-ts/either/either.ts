@@ -1,8 +1,7 @@
 /* eslint-disable no-console */
 import { either as E, function as F } from 'fp-ts';
 import { Response, trySomething } from '../../util/util.js';
-
-const { pipe } = F;
+import pipe = F.pipe;
 
 /*
  * Handle errors and successes

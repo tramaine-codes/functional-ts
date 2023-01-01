@@ -4,8 +4,8 @@ import {
   option as O,
   readonlyArray as RA,
 } from 'fp-ts';
-
-const { flow, pipe } = F;
+import flow = F.flow;
+import pipe = F.pipe;
 
 function get(index: number) {
   return flow(RA.lookup(index));

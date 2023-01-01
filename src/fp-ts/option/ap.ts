@@ -5,8 +5,7 @@ import {
   option as O,
   readonlyArray as RA,
 } from 'fp-ts';
-
-const { pipe } = F;
+import pipe = F.pipe;
 
 const add = (x: number) => (y: number) => x + y;
 

@@ -6,8 +6,8 @@ import {
   task as T,
   taskEither as TE,
 } from 'fp-ts';
-
-const { flow, pipe } = F;
+import flow = F.flow;
+import pipe = F.pipe;
 
 function validate(num: number) {
   if (num < 10) {
