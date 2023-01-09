@@ -1,20 +1,16 @@
 /* eslint-disable no-console */
 import { match } from 'ts-pattern';
 
-enum Foo {
-  FOO,
-  BAR,
-  BAZ,
-}
+type Foo = 'foo' | 'bar' | 'baz';
 
-const qux = () => {
-  return Foo.BAR;
+const qux = (): Foo => {
+  return 'foo';
 };
 
-console.log(
-  match(qux())
-    .with(Foo.FOO, () => 'foo')
-    .with(Foo.BAR, () => 'bar')
-    .with(Foo.BAZ, () => 'baz')
-    .exhaustive()
-);
+const quux = match(qux())
+  .with('foo', () => 1)
+  .with('bar', () => 'bar')
+  .with('baz', () => 'baz')
+  .exhaustive();
+
+console.log(quux);
