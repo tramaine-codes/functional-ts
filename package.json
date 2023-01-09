@@ -49,6 +49,7 @@
   "dependencies": {
     "@mobily/ts-belt": "4.0.0-rc.3",
     "@rimbu/core": "0.11.0",
+    "@swan-io/boxed": "0.12.0",
     "@unsplash/sum-types": "0.3.1",
     "collectable": "0.31.1",
     "fluture": "14.0.0",
