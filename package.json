@@ -32,11 +32,11 @@
     "@release-it/conventional-changelog": "5.1.1",
     "@types/node": "18.11.18",
     "@types/sanctuary": "3.1.0",
-    "@typescript-eslint/eslint-plugin": "5.48.2",
-    "@typescript-eslint/parser": "5.48.2",
-    "@vitest/coverage-c8": "0.27.3",
+    "@typescript-eslint/eslint-plugin": "5.49.0",
+    "@typescript-eslint/parser": "5.49.0",
+    "@vitest/coverage-c8": "0.28.3",
     "del-cli": "5.0.0",
-    "eslint": "8.32.0",
+    "eslint": "8.33.0",
     "husky": "8.0.3",
     "lint-staged": "13.1.0",
     "prettier": "2.8.3",
@@ -44,7 +44,7 @@
     "testdouble": "3.16.8",
     "tsx": "3.12.2",
     "typescript": "4.9.4",
-    "vitest": "0.27.3"
+    "vitest": "0.28.3"
   },
   "dependencies": {
     "@mobily/ts-belt": "4.0.0-rc.5",
@@ -64,14 +64,14 @@
     "pratica": "2.1.0",
     "prelude-ts": "1.0.6",
     "purifree-ts": "1.2.3",
-    "purify-ts": "1.3.0",
-    "remeda": "1.6.0",
+    "purify-ts": "1.3.1",
+    "remeda": "1.6.1",
     "rxjs": "7.8.0",
     "sanctuary": "3.1.0",
     "shades": "2.2.0",
     "true-myth": "6.2.0",
     "ts-option": "2.1.0",
-    "ts-pattern": "3.3.5",
+    "ts-pattern": "4.1.3",
     "wonka": "6.1.2"
   }
 }
