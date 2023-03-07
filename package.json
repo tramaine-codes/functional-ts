@@ -14,7 +14,7 @@
   },
   "scripts": {
     "build": "npm run clean && npm test && tsc",
-    "clean": "del ./lib ./coverage",
+    "clean": "del-cli lib coverage",
     "format": "prettier . --write",
     "lint": "eslint . --ext .js,.ts",
     "lint:fix": "eslint . --ext .js,.ts --fix",
@@ -47,8 +47,8 @@
     "vitest": "0.29.2"
   },
   "dependencies": {
-    "@effect/data": "^0.3.2",
-    "@effect/match": "^0.3.0",
+    "@effect/data": "0.3.3",
+    "@effect/match": "0.3.0",
     "@mobily/ts-belt": "4.0.0-rc.5",
     "@rimbu/core": "0.11.0",
     "@swan-io/boxed": "0.12.1",
