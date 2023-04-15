@@ -27,14 +27,14 @@
     "watch": "tsc -c"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.5.1",
-    "@commitlint/config-conventional": "17.4.4",
+    "@commitlint/cli": "17.6.1",
+    "@commitlint/config-conventional": "17.6.1",
     "@release-it/conventional-changelog": "5.1.1",
     "@types/node": "18.15.11",
     "@types/sanctuary": "3.1.0",
-    "@typescript-eslint/eslint-plugin": "5.57.1",
-    "@typescript-eslint/parser": "5.57.1",
-    "@vitest/coverage-c8": "0.30.0",
+    "@typescript-eslint/eslint-plugin": "5.58.0",
+    "@typescript-eslint/parser": "5.58.0",
+    "@vitest/coverage-c8": "0.30.1",
     "del-cli": "5.0.0",
     "eslint": "8.38.0",
     "husky": "8.0.3",
@@ -44,11 +44,11 @@
     "testdouble": "3.17.2",
     "tsx": "3.12.6",
     "typescript": "5.0.4",
-    "vitest": "0.30.0"
+    "vitest": "0.30.1"
   },
   "dependencies": {
-    "@effect/data": "0.11.7",
-    "@effect/match": "0.12.1",
+    "@effect/data": "0.12.2",
+    "@effect/match": "0.13.0",
     "@mobily/ts-belt": "4.0.0-rc.5",
     "@rimbu/core": "0.11.1",
     "@swan-io/boxed": "0.13.0",
