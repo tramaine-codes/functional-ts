@@ -32,9 +32,8 @@
     "@release-it/conventional-changelog": "7.0.0",
     "@types/node": "20.4.2",
     "@types/sanctuary": "3.1.0",
-    "@typescript-eslint/eslint-plugin": "6.0.0",
-    "@typescript-eslint/parser": "6.0.0",
-    "@vitest/coverage-c8": "0.33.0",
+    "@typescript-eslint/eslint-plugin": "6.1.0",
+    "@typescript-eslint/parser": "6.1.0",
     "del-cli": "5.0.0",
     "eslint": "8.45.0",
     "husky": "8.0.3",
@@ -47,8 +46,8 @@
     "vitest": "0.33.0"
   },
   "dependencies": {
-    "@effect/data": "0.15.0",
-    "@effect/match": "0.26.0",
+    "@effect/data": "0.15.1",
+    "@effect/match": "0.27.1",
     "@mobily/ts-belt": "4.0.0-rc.5",
     "@rimbu/core": "1.0.0",
     "@swan-io/boxed": "1.0.2",
@@ -70,7 +69,7 @@
     "rxjs": "7.8.1",
     "sanctuary": "3.1.0",
     "shades": "2.2.0",
-    "true-myth": "7.0.0",
+    "true-myth": "7.0.1",
     "ts-option": "2.1.0",
     "ts-pattern": "5.0.3",
     "wonka": "6.3.2"
