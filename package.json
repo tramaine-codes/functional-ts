@@ -27,8 +27,8 @@
     "watch": "tsc -c"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.6.6",
-    "@commitlint/config-conventional": "17.6.6",
+    "@commitlint/cli": "17.6.7",
+    "@commitlint/config-conventional": "17.6.7",
     "@release-it/conventional-changelog": "7.0.0",
     "@types/node": "20.4.2",
     "@types/sanctuary": "3.1.0",
@@ -47,8 +47,8 @@
     "vitest": "0.33.0"
   },
   "dependencies": {
-    "@effect/data": "0.15.1",
-    "@effect/match": "0.27.1",
+    "@effect/data": "0.16.0",
+    "@effect/match": "0.29.0",
     "@mobily/ts-belt": "4.0.0-rc.5",
     "@rimbu/core": "1.0.0",
     "@swan-io/boxed": "1.0.2",
