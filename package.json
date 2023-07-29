@@ -54,6 +54,7 @@
     "@swan-io/boxed": "1.0.2",
     "@unsplash/sum-types": "0.4.0",
     "collectable": "0.31.1",
+    "effect": "2.0.0-next.22",
     "fluture": "14.0.0",
     "fp-ts": "2.16.1",
     "immutable": "4.3.1",
