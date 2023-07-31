@@ -47,10 +47,10 @@
     "vitest": "0.33.0"
   },
   "dependencies": {
-    "@effect/data": "0.17.0",
+    "@effect/data": "0.17.1",
     "@effect/match": "0.30.0",
     "@mobily/ts-belt": "4.0.0-rc.5",
-    "@rimbu/core": "1.0.0",
+    "@rimbu/core": "1.1.0",
     "@swan-io/boxed": "1.0.2",
     "@unsplash/sum-types": "0.4.0",
     "collectable": "0.31.1",
