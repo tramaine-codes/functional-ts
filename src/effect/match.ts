@@ -1,7 +1,5 @@
-/* eslint-disable no-console */
-import { pipe } from 'effect';
-// import { pipe } from '@effect/data/Function';
 import * as Match from '@effect/match';
+import { Console, Effect, pipe } from 'effect';
 
 type Foo = 'foo' | 'bar' | 'baz';
 
@@ -17,7 +15,7 @@ const quux = pipe(
   Match.exhaustive
 );
 
-console.log(quux);
+Effect.runSync(Console.log(quux));
 
 const match = pipe(
   Match.type<{ a: number } | { b: string }>(),
@@ -26,5 +24,5 @@ const match = pipe(
   Match.exhaustive
 );
 
-console.log(match({ a: 0 }));
-console.log(match({ b: 'hello' }));
+Effect.runSync(Console.log(match({ a: 0 })));
+Effect.runSync(Console.log(match({ b: 'hello' })));
