@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
-import { pipe } from '@effect/data/Function';
+import { pipe } from 'effect';
+// import { pipe } from '@effect/data/Function';
 import * as Match from '@effect/match';
 
 type Foo = 'foo' | 'bar' | 'baz';

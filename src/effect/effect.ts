@@ -1,8 +1,5 @@
-import { Effect } from 'effect';
+import { Console, Effect } from 'effect';
 
-const program = Effect.sync(() => {
-  // eslint-disable-next-line no-console
-  console.log('Hello, World!');
-});
+const program = Console.log('Hello, World!');
 
 Effect.runSync(program);
