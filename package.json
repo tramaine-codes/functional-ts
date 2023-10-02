@@ -53,7 +53,7 @@
     "@swan-io/boxed": "1.2.0",
     "@unsplash/sum-types": "0.4.0",
     "collectable": "0.31.1",
-    "effect": "2.0.0-next.40",
+    "effect": "2.0.0-next.41",
     "fluture": "14.0.0",
     "fp-ts": "2.16.1",
     "immutable": "5.0.0-beta.4",
