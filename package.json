@@ -30,7 +30,7 @@
     "@commitlint/cli": "18.4.3",
     "@commitlint/config-conventional": "18.4.3",
     "@release-it/conventional-changelog": "8.0.1",
-    "@types/node": "20.10.2",
+    "@types/node": "20.10.3",
     "@types/sanctuary": "3.1.4",
     "@typescript-eslint/eslint-plugin": "6.13.1",
     "@typescript-eslint/parser": "6.13.1",
@@ -38,11 +38,11 @@
     "del-cli": "5.1.0",
     "eslint": "8.55.0",
     "husky": "8.0.3",
-    "lint-staged": "15.1.0",
+    "lint-staged": "15.2.0",
     "prettier": "3.1.0",
     "release-it": "17.0.0",
     "testdouble": "3.20.1",
-    "tsx": "4.6.1",
+    "tsx": "4.6.2",
     "typescript": "5.3.2",
     "vitest": "0.34.6"
   },
@@ -72,7 +72,7 @@
     "shades": "2.2.0",
     "true-myth": "7.1.0",
     "ts-option": "2.1.0",
-    "ts-pattern": "5.0.5",
+    "ts-pattern": "5.0.6",
     "wonka": "6.3.4"
   }
 }
