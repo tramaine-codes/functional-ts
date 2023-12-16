@@ -1,5 +1,4 @@
-import * as Match from '@effect/match';
-import { Console, Effect, pipe } from 'effect';
+import { Console, Effect, Match, pipe } from 'effect';
 
 type Foo = 'foo' | 'bar' | 'baz';
 

@@ -47,13 +47,12 @@
     "vitest": "1.0.4"
   },
   "dependencies": {
-    "@effect/match": "0.40.0",
     "@mobily/ts-belt": "4.0.0-rc.5",
     "@rimbu/core": "1.1.1",
     "@swan-io/boxed": "2.0.0",
     "@unsplash/sum-types": "0.4.1",
     "collectable": "0.31.1",
-    "effect": "2.0.0-next.47",
+    "effect": "2.0.0-next.60",
     "fluture": "14.0.0",
     "fp-ts": "2.16.1",
     "immutable": "5.0.0-beta.4",
