@@ -1,11 +1,11 @@
-import { Chunk, Console, Effect, Option, pipe } from 'effect';
+import { Chunk, Console, Effect, Option, identity, pipe } from 'effect';
 
 pipe(
   Chunk.make(1, 2, 3),
   Chunk.get(2),
   Option.match({
     onNone: () => -1,
-    onSome: (val) => val,
+    onSome: identity,
   }),
   Console.log,
   Effect.runSync
