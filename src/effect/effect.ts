@@ -11,15 +11,19 @@ const divide = (a: number, b: number): Effect.Effect<never, Error, number> =>
 
 pipe(
   divide(1, 2),
-  // Effect.match({
-  //   onFailure: (error) => error.message,
-  //   onSuccess: (value) => value,
-  // }),
-  Effect.mapBoth({
+  Effect.match({
     onFailure: (error) => error.message,
     onSuccess: (value) => value,
   }),
-  (x) => x,
-  Console.log,
+  Effect.flatMap(Console.log),
   Effect.runSync
 );
+
+const result = await pipe(
+  Effect.promise(() => Promise.resolve(1)),
+  Effect.tap(Console.log),
+  Effect.runPromise
+);
+
+// eslint-disable-next-line no-console
+console.log(result);
