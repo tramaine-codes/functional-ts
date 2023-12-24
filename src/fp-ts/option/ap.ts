@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import {
   console as C,
   function as F,
