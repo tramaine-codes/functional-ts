@@ -27,3 +27,12 @@ const result = await pipe(
 
 // eslint-disable-next-line no-console
 console.log(result);
+
+await pipe(
+  Effect.tryPromise(() =>
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+  ),
+  Effect.flatMap((response) => Effect.tryPromise(() => response.json())),
+  Effect.tap(Console.log),
+  Effect.runPromise
+);
