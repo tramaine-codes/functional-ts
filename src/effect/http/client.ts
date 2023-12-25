@@ -22,5 +22,18 @@ await pipe(
     onFailure: constVoid,
     onSuccess: constVoid,
   }),
+  Effect.ignore,
+  Effect.runPromise
+);
+
+await pipe(
+  Http.request.get('https://jsonplaceholder.typicode.com/postsz/1'),
+  Http.client.fetch(),
+  Effect.flatMap(Http.response.schemaBodyJson(Post)),
+  Effect.tapBoth({
+    onFailure: Console.log,
+    onSuccess: Console.log,
+  }),
+  Effect.ignore,
   Effect.runPromise
 );
