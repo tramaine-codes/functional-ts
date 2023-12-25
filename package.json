@@ -47,6 +47,8 @@
     "vitest": "1.1.0"
   },
   "dependencies": {
+    "@effect/platform": "0.39.0",
+    "@effect/schema": "0.56.1",
     "@mobily/ts-belt": "4.0.0-rc.5",
     "@rimbu/core": "1.1.1",
     "@swan-io/boxed": "2.0.0",
