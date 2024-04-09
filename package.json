@@ -30,10 +30,10 @@
     "@commitlint/cli": "19.2.1",
     "@commitlint/config-conventional": "19.1.0",
     "@release-it/conventional-changelog": "8.0.1",
-    "@types/node": "20.12.4",
+    "@types/node": "20.12.6",
     "@types/sanctuary": "3.1.4",
-    "@typescript-eslint/eslint-plugin": "7.5.0",
-    "@typescript-eslint/parser": "7.5.0",
+    "@typescript-eslint/eslint-plugin": "7.6.0",
+    "@typescript-eslint/parser": "7.6.0",
     "@vitest/coverage-v8": "1.4.0",
     "del-cli": "5.1.0",
     "eslint": "8.57.0",
@@ -47,8 +47,8 @@
     "vitest": "1.4.0"
   },
   "dependencies": {
-    "@effect/platform": "0.48.26",
-    "@effect/schema": "0.64.19",
+    "@effect/platform": "0.48.27",
+    "@effect/schema": "0.64.20",
     "@mobily/ts-belt": "4.0.0-rc.5",
     "@rimbu/core": "2.0.2",
     "@swan-io/boxed": "2.1.1",
@@ -67,13 +67,13 @@
     "prelude-ts": "1.0.6",
     "purifree-ts": "1.2.3",
     "purify-ts": "2.0.3",
-    "remeda": "1.57.1",
+    "remeda": "1.57.2",
     "rxjs": "7.8.1",
     "sanctuary": "3.1.0",
     "shades": "2.2.0",
     "true-myth": "7.1.0",
     "ts-option": "2.1.0",
-    "ts-pattern": "5.1.0",
+    "ts-pattern": "5.1.1",
     "wonka": "6.3.4"
   }
 }
