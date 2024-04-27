@@ -1,15 +1,18 @@
-import { Console, Effect, pipe } from 'effect';
+import * as Console from 'effect/Console';
+import * as Effect from 'effect/Effect';
+import * as Function from 'effect/Function';
 
 const program = Console.log('Hello, World!');
 
 Effect.runSync(program);
 
-const divide = (a: number, b: number): Effect.Effect<number, Error> =>
-  b === 0
-    ? Effect.fail(new Error('cannot divide by zero'))
-    : Effect.succeed(a / b);
+const divide = (a: number, b: number) =>
+  Effect.if(b === 0, {
+    onTrue: () => Effect.fail(new Error('cannot divide by zero')),
+    onFalse: () => Effect.succeed(a / b),
+  });
 
-pipe(
+Function.pipe(
   divide(1, 2),
   Effect.match({
     onFailure: (error) => error.message,
@@ -19,8 +22,7 @@ pipe(
   Effect.runSync
 );
 
-const result = await pipe(
-  Effect.promise(() => Promise.resolve(1)),
+const result = await Effect.promise(() => Promise.resolve(1)).pipe(
   Effect.tap(Console.log),
   Effect.runPromise
 );
@@ -28,10 +30,9 @@ const result = await pipe(
 // eslint-disable-next-line no-console
 console.log(result);
 
-await pipe(
-  Effect.tryPromise(() =>
-    fetch('https://jsonplaceholder.typicode.com/todos/1')
-  ),
+await Effect.tryPromise(() =>
+  fetch('https://jsonplaceholder.typicode.com/todos/1')
+).pipe(
   Effect.flatMap((response) => Effect.tryPromise(() => response.json())),
   Effect.tap(Console.log),
   Effect.runPromise

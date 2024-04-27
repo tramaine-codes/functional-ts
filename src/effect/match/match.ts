@@ -1,13 +1,12 @@
-import { Console, Effect, Match, pipe } from 'effect';
+import * as Console from 'effect/Console';
+import * as Effect from 'effect/Effect';
+import * as Match from 'effect/Match';
 
 type Foo = 'foo' | 'bar' | 'baz';
 
-const qux = (): Foo => {
-  return 'foo';
-};
+const qux = (): Foo => 'foo';
 
-const quux = pipe(
-  Match.value(qux()),
+const quux = Match.value(qux()).pipe(
   Match.when('foo', () => 1),
   Match.when('bar', () => 'bar'),
   Match.when('baz', () => 'baz'),
@@ -16,8 +15,7 @@ const quux = pipe(
 
 Effect.runSync(Console.log(quux));
 
-const match = pipe(
-  Match.type<{ a: number } | { b: string }>(),
+const match = Match.type<{ a: number } | { b: string }>().pipe(
   Match.when({ a: Match.number }, (_) => _.a),
   Match.when({ b: Match.string }, (_) => _.b),
   Match.exhaustive

@@ -1,11 +1,12 @@
-import { Console, Effect, pipe } from 'effect';
+import * as Console from 'effect/Console';
+import * as Effect from 'effect/Effect';
 
 let i = 0;
 const bad = Effect.succeed(i++);
 const good = Effect.suspend(() => Effect.succeed(i++));
 
-pipe(bad, Effect.tap(Console.log), Effect.runSync);
-pipe(bad, Effect.tap(Console.log), Effect.runSync);
+bad.pipe(Effect.tap(Console.log), Effect.runSync);
+bad.pipe(Effect.tap(Console.log), Effect.runSync);
 
-pipe(good, Effect.tap(Console.log), Effect.runSync);
-pipe(good, Effect.tap(Console.log), Effect.runSync);
+good.pipe(Effect.tap(Console.log), Effect.runSync);
+good.pipe(Effect.tap(Console.log), Effect.runSync);
