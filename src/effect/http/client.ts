@@ -27,7 +27,7 @@ await Http.request.get('https://jsonplaceholder.typicode.com/posts/1').pipe(
   Effect.runPromise
 );
 
-await Http.request.get('https://jsonplaceholder.typicode.com/postsz/1').pipe(
+await Http.request.get('https://jsonplaceholder.typicode.com/posts/1').pipe(
   Http.client.fetch,
   Effect.andThen(Http.response.schemaBodyJson(Post)),
   Effect.scoped,
