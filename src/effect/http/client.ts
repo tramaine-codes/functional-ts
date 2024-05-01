@@ -12,7 +12,7 @@ const Post = Schema.Struct({
 });
 
 await Http.request.get('https://jsonplaceholder.typicode.com/posts/1').pipe(
-  Http.client.fetch,
+  Http.client.fetchOk,
   Effect.andThen(Http.response.schemaBodyJson(Post)),
   Effect.scoped,
   Effect.tapBoth({
@@ -28,7 +28,7 @@ await Http.request.get('https://jsonplaceholder.typicode.com/posts/1').pipe(
 );
 
 await Http.request.get('https://jsonplaceholder.typicode.com/posts/1').pipe(
-  Http.client.fetch,
+  Http.client.fetchOk,
   Effect.andThen(Http.response.schemaBodyJson(Post)),
   Effect.scoped,
   Effect.tapBoth({
