@@ -1,3 +1,3 @@
-import { test } from 'vitest';
+import { test } from 'bun:test';
 
 test.todo('write tests');
