@@ -117,14 +117,12 @@ console.log(Either.fromNullable(1).map(() => Either.fromNullable(2)));
 console.log(Either.fromNullable(1).chain(() => Either.fromNullable(2)));
 console.log(Either.fromNullable(null).chain(() => Either.fromNullable(1)));
 console.log(
-  Either.try<never, Error>(() => {
+  Either.try(() => {
     throw new Error('baz');
-  }).mapLeft((x) => x)
+  })
 );
 console.log(
   Either.try<never, Error>(() => {
     throw new Error('qux');
-  })
-    .map((x) => x)
-    .mapLeft((_) => 'an error was thrown and caught')
+  }).mapLeft((_) => 'an error was thrown and caught')
 );
