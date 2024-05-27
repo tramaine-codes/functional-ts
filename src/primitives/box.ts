@@ -2,11 +2,7 @@
 import util from 'bun';
 
 class Box<T> {
-  private readonly x: T;
-
-  private constructor(x: T) {
-    this.x = x;
-  }
+  private constructor(private readonly x: T) {}
 
   chain = <U>(f: (x: T) => U) => f(this.x);
 
