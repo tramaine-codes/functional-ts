@@ -1,9 +1,8 @@
 /* eslint-disable no-console */
-import { caseOf, Maybe, pipe } from 'purifree-ts';
+import { Maybe, caseOf, pipe } from 'purifree-ts';
 
-const get = <T>(lst: readonly T[], index: number) => {
-  return Maybe.fromNullable(lst[index]);
-};
+const get = <T>(lst: readonly T[], index: number) =>
+  Maybe.fromNullable(lst[index]);
 
 console.log(
   pipe(

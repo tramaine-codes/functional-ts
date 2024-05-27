@@ -1,13 +1,13 @@
 /* eslint-disable no-console */
 import {
-  bimap,
   Either,
-  extract,
   Left,
+  Right,
+  bimap,
+  extract,
   mapLeft,
   match,
   pipe,
-  Right,
 } from 'purifree-ts';
 import { Response, trySomething } from '../../util/util.js';
 
@@ -15,9 +15,8 @@ import { Response, trySomething } from '../../util/util.js';
  * Handle errors and successes
  */
 
-const failOrNot = (fail: boolean): Either<string, string> => {
-  return fail ? Left('failure') : Right('success');
-};
+const failOrNot = (fail: boolean): Either<string, string> =>
+  fail ? Left('failure') : Right('success');
 
 pipe(failOrNot(true), match({ Right: console.log, Left: console.error }));
 

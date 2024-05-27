@@ -1,6 +1,6 @@
 import * as Console from 'effect/Console';
 import * as Effect from 'effect/Effect';
-import * as Function from 'effect/Function';
+import * as F from 'effect/Function';
 
 const program = Console.log('Hello, World!');
 
@@ -12,7 +12,7 @@ const divide = (a: number, b: number) =>
     onFalse: () => Effect.succeed(a / b),
   });
 
-Function.pipe(
+F.pipe(
   divide(1, 2),
   Effect.match({
     onFailure: (error) => error.message,

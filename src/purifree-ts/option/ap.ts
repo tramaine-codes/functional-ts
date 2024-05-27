@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { ap, extract, Just, List, pipe } from 'purifree-ts';
+import { Just, List, ap, extract, pipe } from 'purifree-ts';
 
 const add = (x: number) => (y: number) => x + y;
 

@@ -2,7 +2,7 @@ import * as Http from '@effect/platform/HttpClient';
 import * as Schema from '@effect/schema/Schema';
 import * as Console from 'effect/Console';
 import * as Effect from 'effect/Effect';
-import * as Function from 'effect/Function';
+import * as F from 'effect/Function';
 
 const Post = Schema.Struct({
   id: Schema.Number,
@@ -20,8 +20,8 @@ await Http.request.get('https://jsonplaceholder.typicode.com/posts/1').pipe(
     onSuccess: Console.log,
   }),
   Effect.match({
-    onFailure: Function.constVoid,
-    onSuccess: Function.constVoid,
+    onFailure: F.constVoid,
+    onSuccess: F.constVoid,
   }),
   Effect.ignore,
   Effect.runPromise

@@ -1,9 +1,7 @@
 /* eslint-disable no-console */
 import { A, O, pipe } from '@mobily/ts-belt';
 
-const get = <T>(lst: readonly T[], index: number) => {
-  return pipe(lst, A.get(index));
-};
+const get = <T>(lst: readonly T[], index: number) => pipe(lst, A.get(index));
 
 console.log(
   pipe(

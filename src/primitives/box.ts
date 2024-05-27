@@ -17,7 +17,7 @@ class Box<T> {
 
 const nextCharForNumberString_ = (str: string) => {
   const trimmed = str.trim();
-  const number = parseInt(trimmed);
+  const number = Number.parseInt(trimmed);
   const nextNumber = number + 1;
   return String.fromCharCode(nextNumber);
 };
@@ -25,7 +25,7 @@ const nextCharForNumberString_ = (str: string) => {
 const nextCharForNumberString = (str: string) =>
   Box.of(str)
     .map((x) => x.trim())
-    .map(parseInt)
+    .map(Number.parseInt)
     .map((x) => x + 1)
     .fold(String.fromCharCode);
 
@@ -33,6 +33,7 @@ console.log(nextCharForNumberString_('   64 '));
 console.log(nextCharForNumberString('   64 '));
 
 const halfTheFirstLargeNumber_ = (xs: number[]) => {
+  // biome-ignore lint/style/noNonNullAssertion: <explanation>
   const first = (xs: number[]) => xs[0]!;
 
   const found = xs.filter((x) => x >= 20);
@@ -41,6 +42,7 @@ const halfTheFirstLargeNumber_ = (xs: number[]) => {
 };
 
 const halfTheFirstLargeNumber = (xs: number[]) => {
+  // biome-ignore lint/style/noNonNullAssertion: <explanation>
   const first = (xs: number[]) => xs[0]!;
 
   return Box.of(xs)

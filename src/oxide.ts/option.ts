@@ -1,9 +1,7 @@
 /* eslint-disable no-console */
 import { Option } from 'oxide.ts';
 
-const get = <T>(lst: readonly T[], index: number) => {
-  return Option.from(lst[index]);
-};
+const get = <T>(lst: readonly T[], index: number) => Option.from(lst[index]);
 
 console.log(get([1, 2, 3], 2).unwrapOr(-1));
 

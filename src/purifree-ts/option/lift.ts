@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { extract, Just, lift2C, List, pipe } from 'purifree-ts';
+import { Just, List, extract, lift2C, pipe } from 'purifree-ts';
 
 const add = (x: number) => (y: number) => x + y;
 const addLifted = lift2C(add);

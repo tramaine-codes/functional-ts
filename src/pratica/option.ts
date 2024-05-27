@@ -1,9 +1,7 @@
 /* eslint-disable no-console */
 import { nullable } from 'pratica';
 
-const get = <T>(lst: readonly T[], index: number) => {
-  return nullable(lst[index]);
-};
+const get = <T>(lst: readonly T[], index: number) => nullable(lst[index]);
 
 console.log(
   get([1, 2, 3], 2).cata({

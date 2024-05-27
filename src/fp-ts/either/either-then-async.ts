@@ -3,8 +3,8 @@ import {
   console as C,
   either as E,
   function as F,
-  task as T,
   taskEither as TE,
+  type task as T,
 } from 'fp-ts';
 import flow = F.flow;
 import pipe = F.pipe;

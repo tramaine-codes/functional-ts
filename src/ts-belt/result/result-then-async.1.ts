@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { AR, pipe, R } from '@mobily/ts-belt';
+import { AR, R, pipe } from '@mobily/ts-belt';
 
 async function validate(num: number) {
   if (num < 10) {

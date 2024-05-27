@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { fromArray, pipe, combine, subscribe } from 'wonka';
+import { combine, fromArray, pipe, subscribe } from 'wonka';
 
 pipe(
   combine(fromArray([1, 2, 3]), fromArray([4, 5, 6])),

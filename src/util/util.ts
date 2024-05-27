@@ -21,9 +21,8 @@ export function trySomething() {
   const throwError = () => {
     throw new Error('foo');
   };
-  const random = ((min: number, max: number) => {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  })(1, 10);
+  const random = ((min: number, max: number) =>
+    Math.floor(Math.random() * (max - min + 1) + min))(1, 10);
 
   return random > 5 ? throwError() : random;
 }

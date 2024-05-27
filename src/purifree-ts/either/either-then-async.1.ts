@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { chain, EitherAsync, extract, Left, pipe, Right } from 'purifree-ts';
+import { EitherAsync, Left, Right, chain, extract, pipe } from 'purifree-ts';
 
 function validate(num: number) {
   if (num < 10) {

@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
-import { console as C, function as F } from 'fp-ts';
 import * as Sum from '@unsplash/sum-types';
+import { console as C, function as F } from 'fp-ts';
 
 const { pipe } = F;
 
