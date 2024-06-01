@@ -1,31 +1,36 @@
 {
-  "name": "functional-ts",
-  "type": "module",
-  "version": "0.0.0",
-  "description": "Project for exploring functional libraries in TypeScript",
   "author": "Tramaine L. Gillus",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:tgillus/functional-ts.git"
+  "dependencies": {
+    "@effect/platform": "0.55.3",
+    "@effect/schema": "0.67.16",
+    "@mobily/ts-belt": "4.0.0-rc.5",
+    "@rimbu/core": "2.0.2",
+    "@swan-io/boxed": "2.3.0",
+    "@unsplash/sum-types": "0.4.1",
+    "collectable": "0.31.1",
+    "effect": "3.2.7",
+    "fluture": "14.0.0",
+    "fp-ts": "2.16.6",
+    "immutable": "5.0.0-beta.5",
+    "list": "2.0.19",
+    "monet": "0.9.3",
+    "neverthrow": "6.2.1",
+    "oxide.ts": "1.1.0",
+    "pify": "6.1.0",
+    "pratica": "2.2.0",
+    "prelude-ts": "1.0.6",
+    "purifree-ts": "1.2.3",
+    "purify-ts": "2.0.3",
+    "remeda": "2.0.0",
+    "rxjs": "7.8.1",
+    "sanctuary": "3.1.0",
+    "shades": "2.2.0",
+    "true-myth": "7.3.0",
+    "ts-option": "2.1.0",
+    "ts-pattern": "5.1.2",
+    "wonka": "6.3.4"
   },
-  "license": "MIT",
-  "engines": {
-    "node": ">=14.16"
-  },
-  "scripts": {
-    "build": "bun run clean && bun test && tsc",
-    "clean": "del-cli lib coverage",
-    "format": "biome format --write --no-errors-on-unmatched .",
-    "lint": "biome lint --no-errors-on-unmatched .",
-    "lint:fix": "biome lint --apply --no-errors-on-unmatched .",
-    "prepack": "bun run build",
-    "prepare": "husky install",
-    "release": "release-it --ci",
-    "test": "bun test",
-    "test:cov": "bun test --coverage",
-    "test:watch": "bun test --watch",
-    "watch": "tsc -c"
-  },
+  "description": "Project for exploring functional libraries in TypeScript",
   "devDependencies": {
     "@biomejs/biome": "1.7.3",
     "@commitlint/cli": "19.3.0",
@@ -40,34 +45,29 @@
     "testdouble": "3.20.2",
     "typescript": "5.4.5"
   },
-  "dependencies": {
-    "@effect/platform": "0.55.0",
-    "@effect/schema": "0.67.13",
-    "@mobily/ts-belt": "4.0.0-rc.5",
-    "@rimbu/core": "2.0.2",
-    "@swan-io/boxed": "2.3.0",
-    "@unsplash/sum-types": "0.4.1",
-    "collectable": "0.31.1",
-    "effect": "3.2.5",
-    "fluture": "14.0.0",
-    "fp-ts": "2.16.6",
-    "immutable": "5.0.0-beta.5",
-    "list": "2.0.19",
-    "monet": "0.9.3",
-    "neverthrow": "6.2.1",
-    "oxide.ts": "1.1.0",
-    "pify": "6.1.0",
-    "pratica": "2.2.0",
-    "prelude-ts": "1.0.6",
-    "purifree-ts": "1.2.3",
-    "purify-ts": "2.0.3",
-    "remeda": "1.61.0",
-    "rxjs": "7.8.1",
-    "sanctuary": "3.1.0",
-    "shades": "2.2.0",
-    "true-myth": "7.3.0",
-    "ts-option": "2.1.0",
-    "ts-pattern": "5.1.2",
-    "wonka": "6.3.4"
-  }
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "name": "functional-ts",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tgillus/functional-ts.git"
+  },
+  "scripts": {
+    "build": "bun run clean && bun test && tsc",
+    "clean": "del-cli lib coverage",
+    "format": "biome format --write --no-errors-on-unmatched .",
+    "lint": "biome lint --no-errors-on-unmatched .",
+    "lint:fix": "biome lint --apply --no-errors-on-unmatched .",
+    "prepack": "bun run build",
+    "prepare": "husky",
+    "release": "release-it --ci",
+    "test": "bun test",
+    "test:cov": "bun test --coverage",
+    "test:watch": "bun test --watch",
+    "watch": "tsc -c"
+  },
+  "type": "module",
+  "version": "0.0.0"
 }

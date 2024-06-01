@@ -9,6 +9,7 @@ const users = [
   { name: 'paula', age: 24, gender: 'f' },
 ];
 
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(
   R.pipe(
     users,
