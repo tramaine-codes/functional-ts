@@ -1,6 +1,4 @@
-import * as Console from 'effect/Console';
-import * as Effect from 'effect/Effect';
-import * as Match from 'effect/Match';
+import { Console, Effect, Match } from 'effect';
 
 type Foo = 'foo' | 'bar' | 'baz';
 

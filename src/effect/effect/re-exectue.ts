@@ -1,5 +1,4 @@
-import * as Console from 'effect/Console';
-import * as Effect from 'effect/Effect';
+import { Console, Effect } from 'effect';
 
 let i = 0;
 const bad = Effect.succeed(i++);
