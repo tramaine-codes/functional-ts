@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { Either, Left, Right } from 'purify-ts';
 import { Response, trySomething } from '../../util/util.js';
 

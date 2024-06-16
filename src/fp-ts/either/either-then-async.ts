@@ -1,10 +1,9 @@
-/* eslint-disable no-console */
 import {
   console as C,
   either as E,
   function as F,
-  taskEither as TE,
   type task as T,
+  taskEither as TE,
 } from 'fp-ts';
 import flow = F.flow;
 import pipe = F.pipe;

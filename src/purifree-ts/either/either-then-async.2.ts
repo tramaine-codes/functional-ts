@@ -1,7 +1,6 @@
-/* eslint-disable no-console */
 import { EitherAsync, Left, Right, chain, extract, pipe } from 'purifree-ts';
 
-function validate(num: number) {
+const validate = (num: number) => {
   if (num < 10) {
     return Left(['foo', 'bar'] as const);
   }
@@ -9,11 +8,9 @@ function validate(num: number) {
   return Right({
     baz: 'qux',
   } as const);
-}
+};
 
-async function process({ baz }: { readonly baz: string }) {
-  return baz;
-}
+const process = async ({ baz }: { readonly baz: string }) => baz;
 
 const result = pipe(
   await pipe(
@@ -25,4 +22,5 @@ const result = pipe(
   extract()
 );
 
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(result);

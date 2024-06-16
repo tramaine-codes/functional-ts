@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import Future, {
   attempt,
   attemptP,
@@ -10,7 +9,7 @@ import Future, {
   resolve,
   value,
 } from 'fluture';
-import { noop } from 'remeda';
+import { doNothing } from 'remeda';
 
 const future = reject(20)
   .pipe(mapRej((x) => x + 1))
@@ -21,20 +20,23 @@ future.pipe(value(console.log));
 const foo = await promise(
   Future<Error, string>((_reject, resolve) => {
     resolve('foo');
-    return noop;
+    return doNothing;
   }).pipe(map((val) => `${val}!`))
 );
 
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(foo);
 
 const bar = await promise(
   attempt<Error, string>(() => 'bar').pipe(map((val) => `${val}!`))
 );
 
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(bar);
 
 const baz = await promise(
   attemptP<Error, string>(async () => 'baz').pipe(map((val) => `${val}!`))
 );
 
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(baz);

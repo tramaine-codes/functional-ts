@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable no-console */
 import util from 'bun';
 
 abstract class Either<L, R> {
@@ -89,6 +87,7 @@ const findColor = (name: string) =>
     { red: '#ff4444', blue: '#3b5998', yellow: '#fff68f' }[name]
   );
 
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(
   findColor('red')
     .map((color) => color.toUpperCase())
@@ -99,6 +98,7 @@ console.log(
     })
 );
 
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(
   findColor('foo')
     .map((color) => color.toUpperCase())
@@ -109,18 +109,27 @@ console.log(
     })
 );
 
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(Either.fromNullable(1));
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(Either.fromNullable(false));
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(Either.fromNullable(null));
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(Either.fromNullable(undefined));
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(Either.fromNullable(1).map(() => Either.fromNullable(2)));
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(Either.fromNullable(1).chain(() => Either.fromNullable(2)));
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(Either.fromNullable(null).chain(() => Either.fromNullable(1)));
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(
   Either.try(() => {
     throw new Error('baz');
   })
 );
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(
   Either.try<never, Error>(() => {
     throw new Error('qux');

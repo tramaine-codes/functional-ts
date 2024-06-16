@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import util from 'bun';
 
 class Box<T> {
@@ -29,7 +28,9 @@ const nextCharForNumberString = (str: string) =>
     .map((x) => x + 1)
     .fold(String.fromCharCode);
 
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(nextCharForNumberString_('   64 '));
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(nextCharForNumberString('   64 '));
 
 const halfTheFirstLargeNumber_ = (xs: number[]) => {
@@ -52,7 +53,9 @@ const halfTheFirstLargeNumber = (xs: number[]) => {
     .fold((x) => `The answer is ${x}`);
 };
 
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(halfTheFirstLargeNumber_([1, 4, 50]));
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(halfTheFirstLargeNumber([1, 4, 50]));
 
 const calc___ = (x: number, y: number, z: number) => x + y * z;
@@ -80,7 +83,11 @@ const calc = (x: number, y: number, z: number) =>
     )
     .fold((x) => x);
 
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(calc___(1, 2, 4));
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(calc__(1, 2, 4));
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(calc_(1, 2, 4));
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(calc(1, 2, 4));

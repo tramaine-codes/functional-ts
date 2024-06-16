@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { pipe } from 'purifree-ts';
 import S from 'shades';
 
@@ -54,14 +53,19 @@ const store = {
   },
 };
 
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(pipe(jack, S.get('name')));
 
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(pipe(store, S.get('users', 0, 'name')));
 
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(pipe(store, S.get('users', S.all(), 'posts')));
 
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(pipe(store, S.get('users', S.all(), 'posts', S.all(), 'likes')));
 
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(
   pipe(
     store,

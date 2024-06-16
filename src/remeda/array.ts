@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import * as R from 'remeda';
 
 const users = [

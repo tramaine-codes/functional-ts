@@ -1,5 +1,4 @@
-/* eslint-disable no-console */
-import { err, ok, Result } from 'neverthrow';
+import { Result, err, ok } from 'neverthrow';
 import { Response, trySomething } from '../util/util.js';
 
 /*

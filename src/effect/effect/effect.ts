@@ -27,7 +27,7 @@ const result = await Effect.promise(() => Promise.resolve(1)).pipe(
   Effect.runPromise
 );
 
-// eslint-disable-next-line no-console
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(result);
 
 await Effect.tryPromise(() =>

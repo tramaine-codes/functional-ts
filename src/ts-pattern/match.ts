@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { match } from 'ts-pattern';
 
 type Foo = 'foo' | 'bar' | 'baz';
@@ -11,4 +10,5 @@ const quux = match(qux())
   .with('baz', () => 'baz')
   .exhaustive();
 
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(quux);

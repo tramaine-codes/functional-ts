@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { AR, R, pipe } from '@mobily/ts-belt';
 
 interface Result {
@@ -7,7 +6,7 @@ interface Result {
 
 type Errors = readonly string[];
 
-function validate(num: number) {
+const validate = (num: number) => {
   if (num < 10) {
     return R.Error(['foo', 'bar'] as const);
   }
@@ -15,11 +14,9 @@ function validate(num: number) {
   return R.Ok({
     baz: 'qux',
   } as const);
-}
+};
 
-function process({ baz }: Result) {
-  return AR.resolve(baz);
-}
+const process = ({ baz }: Result) => AR.resolve(baz);
 
 const result = await pipe(
   11,
@@ -28,4 +25,5 @@ const result = await pipe(
   AR.flatMap(process)
 );
 
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(result);

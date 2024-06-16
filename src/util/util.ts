@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 export class Response {
   constructor(
     private readonly statusCode: 200 | 400,
@@ -12,12 +11,13 @@ export class Response {
     });
   }
 
-  static log({ body }: Response) {
+  static log = ({ body }: Response) => {
+    // biome-ignore lint/suspicious/noConsoleLog: <explanation>
     console.log(body);
-  }
+  };
 }
 
-export function trySomething() {
+export const trySomething = () => {
   const throwError = () => {
     throw new Error('foo');
   };
@@ -25,4 +25,4 @@ export function trySomething() {
     Math.floor(Math.random() * (max - min + 1) + min))(1, 10);
 
   return random > 5 ? throwError() : random;
-}
+};

@@ -1,7 +1,7 @@
-/* eslint-disable no-console */
 import { Observable } from 'rxjs';
 
 const foo = new Observable((subscriber) => {
+  // biome-ignore lint/suspicious/noConsoleLog: <explanation>
   console.log('foo');
   subscriber.next(42);
 });

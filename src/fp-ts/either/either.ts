@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { either as E, function as F } from 'fp-ts';
 import { Response, trySomething } from '../../util/util.js';
 import pipe = F.pipe;
