@@ -1,4 +1,8 @@
-import * as Http from '@effect/platform/HttpClient';
+import {
+  HttpClient,
+  HttpClientRequest,
+  HttpClientResponse,
+} from '@effect/platform';
 import * as Schema from '@effect/schema/Schema';
 import { Console, Effect } from 'effect';
 import { constVoid } from 'effect/Function';
@@ -10,9 +14,11 @@ const Post = Schema.Struct({
   userId: Schema.Number,
 });
 
-await Http.request.get('https://jsonplaceholder.typicode.com/posts/1').pipe(
-  Http.client.fetchOk,
-  Effect.andThen(Http.response.schemaBodyJson(Post)),
+await HttpClientRequest.get(
+  'https://jsonplaceholder.typicode.com/posts/1'
+).pipe(
+  HttpClient.fetchOk,
+  Effect.andThen(HttpClientResponse.schemaBodyJson(Post)),
   Effect.scoped,
   Effect.tapBoth({
     onFailure: Console.log,
@@ -26,9 +32,11 @@ await Http.request.get('https://jsonplaceholder.typicode.com/posts/1').pipe(
   Effect.runPromise
 );
 
-await Http.request.get('https://jsonplaceholder.typicode.com/posts/1').pipe(
-  Http.client.fetchOk,
-  Effect.andThen(Http.response.schemaBodyJson(Post)),
+await HttpClientRequest.get(
+  'https://jsonplaceholder.typicode.com/posts/1'
+).pipe(
+  HttpClient.fetchOk,
+  Effect.andThen(HttpClientResponse.schemaBodyJson(Post)),
   Effect.scoped,
   Effect.tapBoth({
     onFailure: Console.log,

@@ -29,7 +29,7 @@ console.log(result);
 await Effect.tryPromise(() =>
   fetch('https://jsonplaceholder.typicode.com/todos/1')
 ).pipe(
-  Effect.flatMap((response) => Effect.tryPromise(() => response.json())),
+  Effect.andThen((response) => Effect.tryPromise(() => response.json())),
   Effect.tap(Console.log),
   Effect.runPromise
 );
