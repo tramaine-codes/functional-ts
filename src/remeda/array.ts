@@ -12,7 +12,7 @@ const users = [
 console.log(
   R.pipe(
     users,
-    R.filter((x) => x.gender === 'f'),
-    R.groupBy((x) => x.age)
+    R.filter(({ gender }) => gender === 'f'),
+    R.groupBy(({ age }) => age)
   )
 );
