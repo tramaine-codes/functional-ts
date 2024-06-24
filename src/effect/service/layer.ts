@@ -44,6 +44,15 @@ const LoggerLive = Layer.effect(
     };
   })
 );
+const LoggerLivePipe = Layer.effect(
+  Logger,
+  Config.pipe(
+    Effect.andThen((config) => config.getConfg),
+    Effect.andThen(({ logLevel }) => ({
+      log: (message: string) => Console.log(`[${logLevel}] ${message}`),
+    }))
+  )
+);
 
 const DatabaseLive = Layer.effect(
   Database,
@@ -62,19 +71,39 @@ const DatabaseLive = Layer.effect(
     };
   })
 );
-
-const AppConfigLive = Layer.merge(ConfigLive, LoggerLive);
-
-const MainLive = DatabaseLive.pipe(
-  Layer.provide(AppConfigLive),
-  Layer.provide(ConfigLive)
+const DatabaseLivePipe = Layer.effect(
+  Database,
+  Effect.all([Config, Logger]).pipe(
+    Effect.andThen(([config, logger]) =>
+      config.getConfg.pipe(
+        Effect.andThen(({ connection }) => ({
+          query: (sql: string) =>
+            logger
+              .log(`Executing query: ${sql}`)
+              .pipe(
+                Effect.andThen(() => ({ result: `Results from ${connection}` }))
+              ),
+        }))
+      )
+    )
+  )
 );
 
+const AppConfigLive = LoggerLive.pipe(Layer.provideMerge(ConfigLive));
+const MainLive = DatabaseLive.pipe(Layer.provide(AppConfigLive));
 const program = Effect.gen(function* () {
   const database = yield* Database;
   return yield* database.query('SELECT * FROM users');
 });
-
 Effect.runSync(
-  Effect.provide(program, MainLive).pipe(Effect.andThen(Console.log))
+  program.pipe(Effect.provide(MainLive), Effect.andThen(Console.log))
+);
+
+const AppConfigLivePipe = LoggerLivePipe.pipe(Layer.provideMerge(ConfigLive));
+const MainLivePipe = DatabaseLivePipe.pipe(Layer.provide(AppConfigLivePipe));
+const programPipe = Database.pipe(
+  Effect.andThen((database) => database.query('SELECT * FROM users'))
+);
+Effect.runSync(
+  programPipe.pipe(Effect.provide(MainLivePipe), Effect.andThen(Console.log))
 );
