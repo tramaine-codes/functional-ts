@@ -24,12 +24,16 @@ class Database extends Context.Tag('Database')<
   }
 >() {}
 
+////////////////////////////////////////////////////////////////////////
+
 const ConfigLive = Layer.succeed(Config, {
   getConfg: Effect.succeed({
     connection: 'mysql://username:password@hostname:port/database_name',
     logLevel: 'INFO',
   }),
 });
+
+////////////////////////////////////////////////////////////////////////
 
 const LoggerLive = Layer.effect(
   Logger,
@@ -44,6 +48,7 @@ const LoggerLive = Layer.effect(
     };
   })
 );
+
 const LoggerLivePipe = Layer.effect(
   Logger,
   Config.pipe(
@@ -53,6 +58,8 @@ const LoggerLivePipe = Layer.effect(
     }))
   )
 );
+
+////////////////////////////////////////////////////////////////////////
 
 const DatabaseLive = Layer.effect(
   Database,
@@ -71,6 +78,7 @@ const DatabaseLive = Layer.effect(
     };
   })
 );
+
 const DatabaseLivePipe = Layer.effect(
   Database,
   Effect.all([Config, Logger]).pipe(
@@ -89,21 +97,29 @@ const DatabaseLivePipe = Layer.effect(
   )
 );
 
+////////////////////////////////////////////////////////////////////////
+
 const AppConfigLive = LoggerLive.pipe(Layer.provideMerge(ConfigLive));
 const MainLive = DatabaseLive.pipe(Layer.provide(AppConfigLive));
+
 const program = Effect.gen(function* () {
   const database = yield* Database;
   return yield* database.query('SELECT * FROM users');
 });
+
 Effect.runSync(
   program.pipe(Effect.provide(MainLive), Effect.andThen(Console.log))
 );
 
+////////////////////////////////////////////////////////////////////////
+
 const AppConfigLivePipe = LoggerLivePipe.pipe(Layer.provideMerge(ConfigLive));
 const MainLivePipe = DatabaseLivePipe.pipe(Layer.provide(AppConfigLivePipe));
+
 const programPipe = Database.pipe(
   Effect.andThen((database) => database.query('SELECT * FROM users'))
 );
+
 Effect.runSync(
   programPipe.pipe(Effect.provide(MainLivePipe), Effect.andThen(Console.log))
 );
