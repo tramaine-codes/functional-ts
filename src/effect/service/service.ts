@@ -129,7 +129,7 @@ const program3Pipe = Effect.serviceOption(Random).pipe(
       onSome: (random) => random.next,
     })
   ),
-  Effect.andThen((randomNumber) => Console.log(`${randomNumber}`))
+  Effect.andThen(Console.log)
 );
 
 Effect.runSync(program3Pipe);
