@@ -51,7 +51,7 @@
     "@types/sanctuary": "3.1.4",
     "del-cli": "5.1.0",
     "husky": "9.1.5",
-    "lint-staged": "15.2.9",
+    "lint-staged": "15.2.10",
     "release-it": "17.6.0",
     "testdouble": "3.20.2",
     "typescript": "5.5.4"
