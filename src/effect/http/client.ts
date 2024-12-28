@@ -1,13 +1,10 @@
 import {
   FetchHttpClient,
   HttpClient,
-  HttpClientRequest,
   HttpClientResponse,
 } from '@effect/platform';
 import { BunRuntime } from '@effect/platform-bun';
-import * as Schema from '@effect/schema/Schema';
-import { Console, Effect } from 'effect';
-import { constVoid } from 'effect/Function';
+import { Console, Effect, Schema } from 'effect';
 
 const Post = Schema.Struct({
   id: Schema.Number,
@@ -18,22 +15,15 @@ const Post = Schema.Struct({
 
 Effect.gen(function* () {
   const client = (yield* HttpClient.HttpClient).pipe(HttpClient.filterStatusOk);
-  const request = HttpClientRequest.get(
-    'https://jsonplaceholder.typicode.com/posts/1'
-  );
 
-  return yield* client.execute(request);
+  return yield* client.get('https://jsonplaceholder.typicode.com/posts/1');
 }).pipe(
   Effect.andThen(HttpClientResponse.schemaBodyJson(Post)),
   Effect.scoped,
   Effect.provide(FetchHttpClient.layer),
   Effect.tapBoth({
-    onFailure: Console.log,
-    onSuccess: Console.log,
-  }),
-  Effect.match({
-    onFailure: constVoid,
-    onSuccess: constVoid,
+    onFailure: (error) => Console.log(error),
+    onSuccess: (post) => Console.log(post),
   }),
   Effect.ignore,
   BunRuntime.runMain
