@@ -1,6 +1,5 @@
-import { AR, R, pipe } from '@mobily/ts-belt';
+import { AR, pipe, R } from '@mobily/ts-belt';
 
-// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(
   await pipe(
     R.Ok('foo'),
@@ -16,7 +15,6 @@ console.log(
   )
 );
 
-// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(
   await pipe(
     R.Error('foo'),
@@ -32,7 +30,6 @@ console.log(
   )
 );
 
-// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(
   await pipe(
     AR.make(Promise.resolve()),
@@ -43,7 +40,6 @@ console.log(
   )
 );
 
-// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(
   await pipe(
     AR.make(Promise.reject()),

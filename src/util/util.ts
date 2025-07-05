@@ -12,7 +12,6 @@ export class Response {
   }
 
   static log = ({ body }: Response) => {
-    // biome-ignore lint/suspicious/noConsoleLog: <explanation>
     console.log(body);
   };
 }

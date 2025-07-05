@@ -8,8 +8,10 @@ import { Response, trySomething } from '../../util/util.js';
 const failOrNot = (fail: boolean): Either<string, string> =>
   fail ? Left('failure') : Right('success');
 
+// biome-ignore lint/suspicious/noConsole: testing
 failOrNot(true).caseOf({ Right: console.log, Left: console.error });
 
+// biome-ignore lint/suspicious/noConsole: testing
 failOrNot(false).caseOf({ Right: console.log, Left: console.error });
 
 /*

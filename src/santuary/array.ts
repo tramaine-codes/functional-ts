@@ -8,10 +8,7 @@ const users = [
   { name: 'paula', age: 24, gender: 'f' },
 ];
 
-// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(S.filter((x: { gender: string }) => x.gender === 'f')(users));
-
-// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(
   S.pipe([
     S.filter((x: { gender: string; age: number }) => x.gender === 'f'),

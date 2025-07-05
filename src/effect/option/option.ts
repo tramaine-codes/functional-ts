@@ -1,4 +1,4 @@
-import { Chunk, Console, Effect, Option, identity } from 'effect';
+import { Chunk, Console, Effect, identity, Option } from 'effect';
 
 Chunk.make(1, 2, 3).pipe(
   Chunk.get(2),

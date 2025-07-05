@@ -1,4 +1,4 @@
-import { AR, R, pipe } from '@mobily/ts-belt';
+import { AR, pipe, R } from '@mobily/ts-belt';
 
 interface Result {
   baz: string;
@@ -25,5 +25,4 @@ const result = await pipe(
   AR.flatMap(process)
 );
 
-// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(result);

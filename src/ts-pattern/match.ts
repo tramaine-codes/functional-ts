@@ -10,5 +10,4 @@ const quux = match(qux())
   .with('baz', () => 'baz')
   .exhaustive();
 
-// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(quux);

@@ -1,4 +1,4 @@
-import { R, pipe } from '@mobily/ts-belt';
+import { pipe, R } from '@mobily/ts-belt';
 
 interface Foo {
   status: 200 | 400;
@@ -16,7 +16,6 @@ const failure = (body: string): Foo => ({
   body,
 });
 
-// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(
   await pipe(
     R.Ok('foo'),
@@ -24,7 +23,6 @@ console.log(
   )
 );
 
-// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(
   await pipe(
     R.Error('failure'),

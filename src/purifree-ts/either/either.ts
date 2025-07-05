@@ -1,12 +1,12 @@
 import {
-  Either,
-  Left,
-  Right,
   bimap,
+  Either,
   extract,
+  Left,
   mapLeft,
   match,
   pipe,
+  Right,
 } from 'purifree-ts';
 import { Response, trySomething } from '../../util/util.js';
 
@@ -17,8 +17,10 @@ import { Response, trySomething } from '../../util/util.js';
 const failOrNot = (fail: boolean): Either<string, string> =>
   fail ? Left('failure') : Right('success');
 
+// biome-ignore lint/suspicious/noConsole: testing
 pipe(failOrNot(true), match({ Right: console.log, Left: console.error }));
 
+// biome-ignore lint/suspicious/noConsole: testing
 pipe(failOrNot(false), match({ Right: console.log, Left: console.error }));
 
 /*

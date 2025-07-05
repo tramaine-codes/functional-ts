@@ -1,4 +1,4 @@
-import { EitherAsync, Left, Right, chain, extract, pipe } from 'purifree-ts';
+import { chain, EitherAsync, extract, Left, pipe, Right } from 'purifree-ts';
 
 const validate = (num: number) => {
   if (num < 10) {
@@ -22,5 +22,4 @@ const result = pipe(
   extract()
 );
 
-// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(result);

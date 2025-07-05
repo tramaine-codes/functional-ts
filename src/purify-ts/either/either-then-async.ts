@@ -16,5 +16,4 @@ const result = await EitherAsync.liftEither(validate(11)).chain((a) =>
   EitherAsync<never, string>(() => process(a))
 );
 
-// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(result.extract());

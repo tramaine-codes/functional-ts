@@ -24,19 +24,16 @@ const foo = await promise(
   }).pipe(map((val) => `${val}!`))
 );
 
-// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(foo);
 
 const bar = await promise(
   attempt<Error, string>(() => 'bar').pipe(map((val) => `${val}!`))
 );
 
-// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(bar);
 
 const baz = await promise(
   attemptP<Error, string>(async () => 'baz').pipe(map((val) => `${val}!`))
 );
 
-// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(baz);

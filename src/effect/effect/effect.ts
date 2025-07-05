@@ -23,7 +23,6 @@ const result = await Effect.promise(() => Promise.resolve(1)).pipe(
   Effect.tap(Console.log),
   Effect.runPromise
 );
-// biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log(result);
 
 await Effect.tryPromise(() =>
